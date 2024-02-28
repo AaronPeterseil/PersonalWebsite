@@ -1,0 +1,15 @@
+{
+  "hash": "adba001031bb6ff208b225c094cc2767",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"About Me\"\n---\n\n\nAbout this site\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 6\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 7\n```\n\n\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -1,0 +1,9 @@
+---
+title: "Projects"
+---
+
+Here I can add some projects
+
+```{r}
+sample(1:100, 10, replace = FALSE)
+```
