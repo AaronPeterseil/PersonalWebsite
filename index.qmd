@@ -1,11 +1,21 @@
 ---
-title: "Aaron Peterseil's Website"
+toc: false
+title: "Aaron Peterseil"
+about:
+  template: trestles
+  links:
+    - icon: linkedin
+      text: LinkedIn
+      url: https://www.linkedin.com/in/aaronpeterseil/
+    - icon: github
+      text: GitHub
+      url: https://github.com/AaronPeterseil
+    - icon: instagram
+      text: Instagram
+      url: https://www.instagram.com/ab_peterseil/
+image: images/linked-in-profile.jpeg
 ---
 
-This is a Quarto website.
+## BIO
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
-
-```{r}
-1 + 1
-```
+I am currently a third year student at University of California, Los Angeles *(UCLA)* working towards my Bachelor's Degree in Statistics and Data Science. You can learn more about me from my [CV](/docs/Resume.pdf).

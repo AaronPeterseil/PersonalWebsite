@@ -1,0 +1,11 @@
+---
+title: "Stats 140XP Project"
+---
+
+My group has been working with LA crime data to answer the following research questions:
+
+1. Can we predict whether a crime is violent or nonviolent from other variables?
+
+2. Are certain areas more dangerous than other areas?
+
+3. Does the time of the crime have a significant effect on if the crime is violent or not?

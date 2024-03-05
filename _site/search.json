@@ -11,13 +11,41 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "Here I can add some projects\n\nsample(1:100, 10, replace = FALSE)\n\n [1] 25 81 19 20 23 45 31 50 18 51"
+    "text": "Stats 140XP Project\n\n\n\n\n\n\n\n\n\n\n\n\n\nBruin Sports Analytics Project\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Aaron Peterseil’s Website",
+    "title": "Aaron Peterseil",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "I am currently a third year student at University of California, Los Angeles (UCLA) working towards my Bachelor’s Degree in Statistics and Data Science. You can learn more about me from my CV."
+  },
+  {
+    "objectID": "index.html#bio",
+    "href": "index.html#bio",
+    "title": "Aaron Peterseil",
+    "section": "",
+    "text": "I am currently a third year student at University of California, Los Angeles (UCLA) working towards my Bachelor’s Degree in Statistics and Data Science. You can learn more about me from my CV."
+  },
+  {
+    "objectID": "projects/140XP.html",
+    "href": "projects/140XP.html",
+    "title": "Stats 140XP Project",
+    "section": "",
+    "text": "My group has been working with LA crime data to answer the following research questions:\n\nCan we predict whether a crime is violent or nonviolent from other variables?\nAre certain areas more dangerous than other areas?\nDoes the time of the crime have a significant effect on if the crime is violent or not?"
+  },
+  {
+    "objectID": "projects/bsa.html",
+    "href": "projects/bsa.html",
+    "title": "Bruin Sports Analytics Project",
+    "section": "",
+    "text": "This is an ongoing project where we are trying to create, a Stuff+, Control+, and Pitching+ statistic for the UCLA baseball team."
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact Me",
+    "section": "",
+    "text": "Contact me!"
   }
 ]

@@ -1,0 +1,5 @@
+---
+title: "Bruin Sports Analytics Project"
+---
+
+This is an ongoing project where we are trying to create, a Stuff+, Control+, and Pitching+ statistic for the UCLA baseball team. 

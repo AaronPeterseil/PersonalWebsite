@@ -1,9 +1,14 @@
 ---
 title: "Projects"
+listing:
+  id: projects-id
+  contents: 
+    - "/projects/*.qmd"
+  type: default
+  sort: false
+  sort-ui: false
+  filter-ui: true
+  fields:
+    - title
+  categories: false
 ---
-
-Here I can add some projects
-
-```{r}
-sample(1:100, 10, replace = FALSE)
-```

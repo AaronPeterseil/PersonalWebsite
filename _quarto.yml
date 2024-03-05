@@ -7,10 +7,13 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: about.qmd
-        text: About Aaron Peterseil
       - href: projects.qmd
         text: My Projects
+      - href: contact.qmd
+        text: Contact Me
+        
+  page-footer:
+    right: "&copy; 2024, Aaron Peterseil"
 
 format:
   html:
