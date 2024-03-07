@@ -10,5 +10,11 @@ listing:
   filter-ui: true
   fields:
     - title
-  categories: false
+    - date
+    - image
+    - description
+    - categories
+  categories: true
+  image-align: left
+title-block-banner: true
 ---

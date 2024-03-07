@@ -1,0 +1,17 @@
+{
+  "hash": "1bcfb06fbfa58874bd626686ca972ead",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Stats 140XP Project\"\ndescription: \"LA Crime Data Analysis\"\nimage: images/LAmap.jpeg\nauthor: \"Aaron Peterseil\"\ndate: \"3/07/2024\"\ncategories:\n  - code\n  - analysis\n---\n\n\n## Overview\n\nMy group has been working with LA crime data to answer the following research questions:\n\n1. Can we predict whether a crime is violent or nonviolent from other variables?\n\n2. Are certain areas more dangerous than other areas?\n\n3. Does the time of the crime have a significant effect on if the crime is violent or not?\n\n## Predicting Violence/Non-Violence\n\n\n::: {.cell}\n\n:::\n\n\nOne potential model we tried was a glm model using the area, it's population, and the victim's age, as predictor variables. We are still refining both our variable and model choices.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nm1 <- glm(violent ~ TIME.OCC+as.factor(AREA)+Vict.Age+population, data=crime_data, family=\"binomial\")\ntrain_predictions <- predict(m1, data=crime_data, newdata=crime_data, type=\"response\")\ntrain <- rep(1, length(train_predictions))\ntrain[train_predictions<0.5] <- 0\n```\n:::\n\n\nOur error rate for our predictions is:\n\n::: {.cell}\n\n```{.r .cell-code}\nmean(as.factor(train)!=crime_data$violent)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 0.3450804\n```\n\n\n:::\n:::\n\n\n## Comparing Different LA Areas\n\nTo compare which neighborhoods in LA were most/least dangerous, we first created some preliminary plots to explore the data.\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](140XP_files/figure-html/unnamed-chunk-4-1.png){width=672}\n:::\n:::\n\n\nBased on this preliminary analysis, we noticed that some areas had a disproportionate number of violent crimes compared to their populations.\n\nTo more rigorously test for signifance, we ran a chi-squared test to determine if there was a significant difference between areas. \n\n\n::: {.cell}\n\n```{.r .cell-code}\nchi_sqr_data <- crime_data[, c(\"AREA.NAME\", \"violent\")]\nchi_table <- table(crime_data$AREA.NAME, crime_data$violent)\nchisq.test(chi_table)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n\n\tPearson's Chi-squared test\n\ndata:  chi_table\nX-squared = 21231, df = 20, p-value < 2.2e-16\n```\n\n\n:::\n:::\n\n\nAs you can see, there is evidence that there is a correlation between the area and the number of violent crimes that occur, suggesting that some areas are more dangerous than others.\n\n## Comparing Violence with the Time of the Crime\n\nWe are currently working on this part of our analysis.\n\n",
+    "supporting": [
+      "140XP_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

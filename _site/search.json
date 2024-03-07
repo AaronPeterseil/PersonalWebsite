@@ -11,7 +11,7 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "Stats 140XP Project\n\n\n\n\n\n\n\n\n\n\n\n\n\nBruin Sports Analytics Project\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Stats 140XP Project\n\n\n\n\n\n\ncode\n\n\nanalysis\n\n\n\nLA Crime Data Analysis\n\n\n\n\n\nMar 7, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nBruin Sports Analytics Project\n\n\n\n\n\n\ncode\n\n\nanalysis\n\n\n\nUCLA Baseball Pitching Analysis\n\n\n\n\n\nMar 7, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -47,5 +47,40 @@
     "title": "Contact Me",
     "section": "",
     "text": "Contact me!"
+  },
+  {
+    "objectID": "projects/140XP.html#overview",
+    "href": "projects/140XP.html#overview",
+    "title": "Stats 140XP Project",
+    "section": "",
+    "text": "My group has been working with LA crime data to answer the following research questions:\n\nCan we predict whether a crime is violent or nonviolent from other variables?\nAre certain areas more dangerous than other areas?\nDoes the time of the crime have a significant effect on if the crime is violent or not?"
+  },
+  {
+    "objectID": "projects/140XP.html#predicting-violencenon-violence",
+    "href": "projects/140XP.html#predicting-violencenon-violence",
+    "title": "Stats 140XP Project",
+    "section": "Predicting Violence/Non-Violence",
+    "text": "Predicting Violence/Non-Violence\nOne potential model we tried was a glm model using the area, it’s population, and the victim’s age, as predictor variables. We are still refining both our variable and model choices.\n\nm1 &lt;- glm(violent ~ TIME.OCC+as.factor(AREA)+Vict.Age+population, data=crime_data, family=\"binomial\")\ntrain_predictions &lt;- predict(m1, data=crime_data, newdata=crime_data, type=\"response\")\ntrain &lt;- rep(1, length(train_predictions))\ntrain[train_predictions&lt;0.5] &lt;- 0\n\nOur error rate for our predictions is:\n\nmean(as.factor(train)!=crime_data$violent)\n\n[1] 0.3450804"
+  },
+  {
+    "objectID": "projects/140XP.html#comparing-different-la-areas",
+    "href": "projects/140XP.html#comparing-different-la-areas",
+    "title": "Stats 140XP Project",
+    "section": "Comparing Different LA Areas",
+    "text": "Comparing Different LA Areas\nTo compare which neighborhoods in LA were most/least dangerous, we first created some preliminary plots to explore the data.\n\n\n\n\n\n\n\n\n\nBased on this preliminary analysis, we noticed that some areas had a disproportionate number of violent crimes compared to their populations.\nTo more rigorously test for signifance, we ran a chi-squared test to determine if there was a significant difference between areas.\n\nchi_sqr_data &lt;- crime_data[, c(\"AREA.NAME\", \"violent\")]\nchi_table &lt;- table(crime_data$AREA.NAME, crime_data$violent)\nchisq.test(chi_table)\n\n\n    Pearson's Chi-squared test\n\ndata:  chi_table\nX-squared = 21231, df = 20, p-value &lt; 2.2e-16\n\n\nAs you can see, there is evidence that there is a correlation between the area and the number of violent crimes that occur, suggesting that some areas are more dangerous than others."
+  },
+  {
+    "objectID": "projects/140XP.html#comparing-violence-with-the-time-of-the-crime",
+    "href": "projects/140XP.html#comparing-violence-with-the-time-of-the-crime",
+    "title": "Stats 140XP Project",
+    "section": "Comparing Violence with the Time of the Crime",
+    "text": "Comparing Violence with the Time of the Crime\nWe are currently working on this part of our analysis."
+  },
+  {
+    "objectID": "projects/bsa.html#overview",
+    "href": "projects/bsa.html#overview",
+    "title": "Bruin Sports Analytics Project",
+    "section": "",
+    "text": "This is an ongoing project where we are trying to create, a Stuff+, Control+, and Pitching+ statistic for the UCLA baseball team."
   }
 ]

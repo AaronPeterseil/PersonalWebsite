@@ -78,9 +78,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-title','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -134,7 +134,7 @@ window.Quarto = {
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -150,15 +150,11 @@ window.Quarto = {
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Home</span></a>
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./projects.html" aria-current="page"> 
 <span class="menu-text">My Projects</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./contact.html"> 
-<span class="menu-text">Contact Me</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -168,32 +164,33 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Projects</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    </div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="analysis">analysis <span class="quarto-category-count">(2)</span></div><div class="category" data-category="code">code <span class="quarto-category-count">(2)</span></div></div></div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Projects</h1>
-</div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
 
 
 
@@ -208,7 +205,12 @@ window.Quarto = {
     </div>
 </div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1709623476190" data-listing-reading-time-sort="1" data-listing-word-count-sort="54">
+<div class="quarto-post image-left" data-index="0" data-categories="code,analysis" data-listing-date-sort="1709798400000" data-listing-file-modified-sort="1709843199051" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="362">
+<div class="thumbnail">
+<p><a href="./projects/140XP.html" class="no-external"></a></p><a href="./projects/140XP.html" class="no-external">
+<p><img src="./projects/images/LAmap.jpeg" class="thumbnail-image"></p>
+</a><p><a href="./projects/140XP.html" class="no-external"></a></p>
+</div>
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="./projects/140XP.html" class="no-external">Stats 140XP Project</a>
@@ -216,13 +218,32 @@ window.Quarto = {
 <div class="listing-subtitle">
 <a href="./projects/140XP.html" class="no-external"></a>
 </div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
+code
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('analysis'); return false;">
+analysis
+</div>
+</div>
+<div class="listing-description">
+<a href="./projects/140XP.html" class="no-external">LA Crime Data Analysis</a>
+</div>
 </div>
 <div class="metadata">
-<p><a href="./projects/140XP.html" class="no-external"></a></p><a href="./projects/140XP.html" class="no-external">
+<a href="./projects/140XP.html" class="no-external">
+<div class="listing-date">
+Mar 7, 2024
+</div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1709623539288" data-listing-reading-time-sort="1" data-listing-word-count-sort="23">
+<div class="quarto-post image-left" data-index="1" data-categories="code,analysis" data-listing-date-sort="1709798400000" data-listing-file-modified-sort="1709843479856" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="23">
+<div class="thumbnail">
+<p><a href="./projects/bsa.html" class="no-external"></a></p><a href="./projects/bsa.html" class="no-external">
+<p><img src="./projects/images/UCLABaseballLogo.png" class="thumbnail-image"></p>
+</a><p><a href="./projects/bsa.html" class="no-external"></a></p>
+</div>
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="./projects/bsa.html" class="no-external">Bruin Sports Analytics Project</a>
@@ -230,9 +251,23 @@ window.Quarto = {
 <div class="listing-subtitle">
 <a href="./projects/bsa.html" class="no-external"></a>
 </div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
+code
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('analysis'); return false;">
+analysis
+</div>
+</div>
+<div class="listing-description">
+<a href="./projects/bsa.html" class="no-external">UCLA Baseball Pitching Analysis</a>
+</div>
 </div>
 <div class="metadata">
-<p><a href="./projects/bsa.html" class="no-external"></a></p><a href="./projects/bsa.html" class="no-external">
+<a href="./projects/bsa.html" class="no-external">
+<div class="listing-date">
+Mar 7, 2024
+</div>
 </a>
 </div>
 </div>

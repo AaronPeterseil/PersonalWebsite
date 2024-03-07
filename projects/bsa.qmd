@@ -1,5 +1,15 @@
 ---
 title: "Bruin Sports Analytics Project"
+image: images/UCLABaseballLogo.png
+description: "UCLA Baseball Pitching Analysis"
+author: "Aaron Peterseil"
+date: "3/07/2024"
+categories:
+  - code
+  - analysis
 ---
 
+## Overview
+
 This is an ongoing project where we are trying to create, a Stuff+, Control+, and Pitching+ statistic for the UCLA baseball team. 
+

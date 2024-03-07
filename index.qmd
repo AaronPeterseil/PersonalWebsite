@@ -13,6 +13,9 @@ about:
     - icon: instagram
       text: Instagram
       url: https://www.instagram.com/ab_peterseil/
+    - icon: inbox-fill
+      text: Email
+      url: mailto:abp12042002@gmail.com
 image: images/linked-in-profile.jpeg
 ---
 

@@ -1,6 +1,15 @@
 ---
 title: "Stats 140XP Project"
+description: "LA Crime Data Analysis"
+image: images/LAmap.jpeg
+author: "Aaron Peterseil"
+date: "3/07/2024"
+categories:
+  - code
+  - analysis
 ---
+
+## Overview
 
 My group has been working with LA crime data to answer the following research questions:
 
@@ -9,3 +18,64 @@ My group has been working with LA crime data to answer the following research qu
 2. Are certain areas more dangerous than other areas?
 
 3. Does the time of the crime have a significant effect on if the crime is violent or not?
+
+## Predicting Violence/Non-Violence
+
+```{r echo=FALSE}
+crime_data <- read.csv("/Users/21peterseilab/Desktop/Stats 140XP/Crime_Data_from_2020_to_Present_20240221.csv")
+crime_data$violent <- ifelse(is.na(crime_data$Weapon.Used.Cd), 0, 1)
+populations <- data.frame("Area" = levels(factor(crime_data$AREA.NAME)), "Population" = c(175000, 40000, 220000, 182214, 171000, 200000, 300000, 225849, 167500, 150000, 250000, 200000, 200000, 164961, 150000, 165000, 8560, 325000, 228000, 196840, 251000))
+
+crime_data$population <- rep(0, nrow(crime_data))
+crime_data$population <- populations$Population[match(crime_data$AREA.NAME, populations$Area)]
+base_error_rate <- mean(crime_data$violent==1)
+```
+
+One potential model we tried was a glm model using the area, it's population, and the victim's age, as predictor variables. We are still refining both our variable and model choices.
+
+```{r warning=FALSE}
+m1 <- glm(violent ~ TIME.OCC+as.factor(AREA)+Vict.Age+population, data=crime_data, family="binomial")
+train_predictions <- predict(m1, data=crime_data, newdata=crime_data, type="response")
+train <- rep(1, length(train_predictions))
+train[train_predictions<0.5] <- 0
+```
+
+Our error rate for our predictions is:
+```{r}
+mean(as.factor(train)!=crime_data$violent)
+```
+
+## Comparing Different LA Areas
+
+To compare which neighborhoods in LA were most/least dangerous, we first created some preliminary plots to explore the data.
+
+```{r echo = FALSE, warning = FALSE}
+num_crimes <- data.frame("Area" = levels(factor(crime_data$AREA.NAME)), "Population" = c(175000, 40000, 220000, 182214, 171000, 200000, 300000, 225849, 167500, 150000, 250000, 200000, 200000, 164961, 150000, 165000, 8560, 325000, 228000, 196840, 251000))
+
+for (i in 1:nrow(num_crimes)) {
+  current_area_data <- crime_data[crime_data$AREA.NAME == num_crimes$Area[i], ]
+  num_crimes[i, "TotalCrimes"] <- nrow(current_area_data)
+  num_crimes[i, "ViolentCrimes"] <- sum(current_area_data$violent == 1)
+  num_crimes[i, "NonViolentCrimes"] <- sum(current_area_data$violent == 0)
+}
+
+plot(num_crimes$Population, num_crimes$ViolentCrimes, main = "Number of Violent Crimes VS Population of Area", ylab = "Number of Violent Crimes", xlab = "Population", ylim = c(8000, 28500))
+text(num_crimes$Population, num_crimes$ViolentCrimes, num_crimes$Area, cex=0.6, pos=3, col="blue")
+```
+
+Based on this preliminary analysis, we noticed that some areas had a disproportionate number of violent crimes compared to their populations.
+
+To more rigorously test for signifance, we ran a chi-squared test to determine if there was a significant difference between areas. 
+
+```{r}
+chi_sqr_data <- crime_data[, c("AREA.NAME", "violent")]
+chi_table <- table(crime_data$AREA.NAME, crime_data$violent)
+chisq.test(chi_table)
+```
+
+As you can see, there is evidence that there is a correlation between the area and the number of violent crimes that occur, suggesting that some areas are more dangerous than others.
+
+## Comparing Violence with the Time of the Crime
+
+We are currently working on this part of our analysis.
+
